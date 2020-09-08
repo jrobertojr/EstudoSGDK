@@ -87,9 +87,8 @@ void LimiteTela() {
 
 // Verificação de colisão
 int Colisao(int x, int xObjeto, int y, int yObjeto) {
-	if (x < xObjeto || x > xObjeto + 32 || y < yObjeto || y > yObjeto + 32) {
+	if (x < xObjeto || x > xObjeto + 32 || y < yObjeto || y > yObjeto + 32)
 		return 0;
-	}
 	else
 		return 1;
 }
