@@ -7,11 +7,13 @@
 
 #include <genesis.h>
 #include "sprites.h"
+#include "gfx.h"
 
 static void MeuImput();
+static int Colisao(int x, int xObjeto, int y, int yObjeto);
 
-int posicaoX = 0;
-int posicaoY = 0;
+int posicaoX = 152;
+int posicaoY = 160;
 
 int main() {
 
@@ -36,9 +38,14 @@ int main() {
 	player = SPR_addSprite(&personagem, posicaoX, posicaoY, PAL0);
 	VDP_setPalette(PAL0, personagem.palette->data);
 
+	VDP_drawImageEx(PLAN_A, &background, TILE_ATTR_FULL(PAL1, 0, 0, 0, 1), 0, 0, 0, CPU);
+	VDP_setPalette(PAL1, background.palette->data);
+
 	while (TRUE) {
 
 		MeuImput(player);
+		LimiteTela();
+
 		SPR_update();
 		VDP_waitVSync();
 	}
@@ -64,4 +71,25 @@ void MeuImput(Sprite* sprite) {
 	}
 
 	SPR_setPosition(sprite, posicaoX, posicaoY);
+}
+
+// Definindo tamanho da Tela
+void LimiteTela() {
+	if (posicaoX <= 0)
+		posicaoX = 0;
+	if (posicaoX + 32 >= 320)
+		posicaoX = 320 - 32;
+	if (posicaoY <= 0)
+		posicaoY = 0;
+	if (posicaoY + 32 >= 224)
+		posicaoY = 224 - 32;
+}
+
+// Verificação de colisão
+int Colisao(int x, int xObjeto, int y, int yObjeto) {
+	if (x < xObjeto || x > xObjeto + 32 || y < yObjeto || y > yObjeto + 32) {
+		return 0;
+	}
+	else
+		return 1;
 }
