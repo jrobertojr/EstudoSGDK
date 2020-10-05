@@ -34,12 +34,16 @@ int main() {
 
 	//Cria o ponteiro da Sprite
 	Sprite* player;
+	Sprite* tiro;
 
 	player = SPR_addSprite(&personagem, posicaoX, posicaoY, PAL0);
 	VDP_setPalette(PAL0, personagem.palette->data);
 
-	VDP_drawImageEx(PLAN_A, &background, TILE_ATTR_FULL(PAL1, 0, 0, 0, 1), 0, 0, 0, CPU);
-	VDP_setPalette(PAL1, background.palette->data);
+	tiro = SPR_addSprite(&fire, posicaoX, posicaoY, PAL1);
+	VDP_setPalette(PAL1, fire.palette->data);
+
+	VDP_drawImageEx(PLAN_A, &background, TILE_ATTR_FULL(PAL2, 0, 0, 0, 1), 0, 0, 0, CPU);
+	VDP_setPalette(PAL2, background.palette->data);
 
 	while (TRUE) {
 
@@ -53,6 +57,7 @@ int main() {
 	return 0;
 }
 
+// Controle
 void MeuImput(Sprite* sprite) {
 	u16 valor = JOY_readJoypad(JOY_1);
 
