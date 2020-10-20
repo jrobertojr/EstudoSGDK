@@ -14,7 +14,7 @@ em "Linha de comando de build" coloque o seguinte codigo:</br>
 Em seguida quando abrir a interface do visual temos que especificar
 o diretório de inclusão, botão direito no projeto e em seguida propiedades,
 em seguida clique em "Diretório VC++" e adicione a pasta "C:\SGDK\inc" em
-"Diretórios de Inclusão", depois é só cliar uma classe "main.c" com o metodo
+"Diretórios de Inclusão", depois é só criar uma classe "main.c" com o metodo
 "int main()" e está tudo pronto para começar, lembrando que para compilar
 temos que compilar somente o projeto e executar o arquivo "rom.bin"
 incluido na pasta "out" do projeto.
