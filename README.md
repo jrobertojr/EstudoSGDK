@@ -5,7 +5,7 @@ Estudo para desenvolvimento de Jogos para Mega Drive / Sega Genesis
 Observação: Este estudo está sendo feito com o SGDK 1.41 
 Link: https://github.com/Stephane-D/SGDK/releases
 
-Em primeiro logar deve ser criada as variaveis de ambiente <b>'GDK -- "C:/SGDK"'</b> e <b>'GDKWIN -- "C:\SGDK"'</b></br>
+Em primeiro lugar deve ser criada as variaveis de ambiente <b>'GDK -- "C:/SGDK"'</b> e <b>'GDKWIN -- "C:\SGDK"'</b></br>
 
 Se utilizar Visual Studio crie um projeto C++ MakeFile e 
 em "Linha de comando de build" coloque o seguinte codigo:</br>
