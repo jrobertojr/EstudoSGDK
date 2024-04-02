@@ -6,8 +6,8 @@
 //Lembrando que a pasta tem que ter o mesmo nome do arquivo ".res"
 
 #include <genesis.h>
-#include "sprites.h"
-#include "gfx.h"
+#include "res/sprites.h"
+#include "res/gfx.h"
 
 static void MeuImput();
 static int Colisao(int x, int xObjeto, int y, int yObjeto);
@@ -42,7 +42,7 @@ int main() {
 	tiro = SPR_addSprite(&fire, posicaoX, posicaoY, PAL1);
 	VDP_setPalette(PAL1, fire.palette->data);
 
-	VDP_drawImageEx(PLAN_A, &background, TILE_ATTR_FULL(PAL2, 0, 0, 0, 1), 0, 0, 0, CPU);
+	VDP_drawImageEx(BG_A, &background, TILE_ATTR_FULL(PAL2, 0, 0, 0, 1), 0, 0, 0, CPU);
 	VDP_setPalette(PAL2, background.palette->data);
 
 	while (TRUE) {

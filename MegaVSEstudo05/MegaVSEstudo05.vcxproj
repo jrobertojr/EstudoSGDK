@@ -72,6 +72,7 @@
     <NMakeBuildCommandLine>%GDK_WIN%\bin\make -f %GDK_WIN%\makefile.gen</NMakeBuildCommandLine>
     <NMakeOutput>MegaVSEstudo05.exe</NMakeOutput>
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>C:\Desenvolvimento\SDK\SGDK\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeBuildCommandLine>%GDK_WIN%\bin\make -f %GDK_WIN%\makefile.gen</NMakeBuildCommandLine>
